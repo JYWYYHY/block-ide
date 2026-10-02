@@ -198,11 +198,14 @@ export function registerCoreBlocks() {
     // ===== 高级 =====
     {
       type: 'js_raw',
-      message0: '原生 JS %1',
-      args0: [{ type: 'field_input', name: 'CODE', text: '' }],
+      message0: '原生 JS',
+      args0: [],
+      message1: '%1',
+      args1: [{ type: 'field_multilineinput', name: 'CODE', text: '' }],
       previousStatement: null,
       nextStatement: null,
       colour: 0,
+      tooltip: '直接写 JS，支持多行',
     },
   ]);
 
