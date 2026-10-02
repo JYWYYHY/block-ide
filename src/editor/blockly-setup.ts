@@ -9,7 +9,7 @@ export function createWorkspace(container: HTMLElement) {
 
   const ws = Blockly.inject(container, {
     renderer: 'zelos',
-    media: '/blockly-media/',
+    media: import.meta.env.BASE_URL + 'blockly-media/',
     toolbox: {
       kind: 'categoryToolbox',
       contents: [
