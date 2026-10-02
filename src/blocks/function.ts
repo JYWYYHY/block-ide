@@ -1,8 +1,6 @@
 import * as Blockly from 'blockly/core';
 import { javascriptGenerator, Order } from 'blockly/javascript';
 
-const ROUND = 2;
-
 export function registerFunctionBlocks() {
   Blockly.common.defineBlocksWithJsonArray([
 
