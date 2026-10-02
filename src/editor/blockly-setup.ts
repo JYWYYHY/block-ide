@@ -14,8 +14,15 @@ export function createWorkspace(container: HTMLElement) {
       kind: 'categoryToolbox',
       contents: [
         {
-          kind: 'category', name: '输出', colour: '20',
-          contents: [{ kind: 'block', type: 'js_log' }],
+          kind: 'category', name: '输入输出', colour: '20',
+          contents: [
+            { kind: 'block', type: 'js_log' },
+            { kind: 'block', type: 'js_show' },
+            { kind: 'block', type: 'js_clear_page' },
+            { kind: 'block', type: 'js_prompt' },
+            { kind: 'block', type: 'js_alert' },
+            { kind: 'block', type: 'js_confirm' },
+          ],
         },
         {
           kind: 'category', name: '值', colour: '50',
@@ -106,6 +113,26 @@ export function createWorkspace(container: HTMLElement) {
           ],
         },
         {
+          kind: 'category', name: '对象', colour: '200',
+          contents: [
+            { kind: 'block', type: 'js_obj_create' },
+            { kind: 'block', type: 'js_obj_get' },
+            { kind: 'block', type: 'js_obj_set' },
+            { kind: 'block', type: 'js_obj_keys' },
+            { kind: 'block', type: 'js_obj_has' },
+            { kind: 'block', type: 'js_json_stringify' },
+            { kind: 'block', type: 'js_json_parse' },
+          ],
+        },
+        {
+          kind: 'category', name: '时间', colour: '40',
+          contents: [
+            { kind: 'block', type: 'js_now' },
+            { kind: 'block', type: 'js_date_str' },
+            { kind: 'block', type: 'js_date_part' },
+          ],
+        },
+        {
           kind: 'category', name: '高级', colour: '0',
           contents: [{ kind: 'block', type: 'js_raw' }],
         },
@@ -114,7 +141,7 @@ export function createWorkspace(container: HTMLElement) {
     grid: { spacing: 20, length: 3, colour: '#333', snap: true },
     zoom: { controls: true, wheel: true, startScale: 0.6, minScale: 0.2 },
     trashcan: true,
-    sounds: true,
+    sounds: false,
     theme: Blockly.Themes.Classic,
   });
 

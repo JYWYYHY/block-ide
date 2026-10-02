@@ -18,8 +18,6 @@ export class Preview {
   run(userCode: string) {
     this.consoleEl.innerHTML = '';
 
-    // 关键：每次运行都换一个全新的 iframe，
-    // 避免上一次运行的全局作用域残留
     if (this.iframe) {
       this.iframe.remove();
     }
@@ -28,7 +26,12 @@ export class Preview {
     this.iframe = iframe;
 
     const html = `<!doctype html>
-<html><head><meta charset="utf-8"></head>
+<html><head><meta charset="utf-8">
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+         font-size: 14px; padding: 8px; margin: 0; line-height: 1.5; }
+</style>
+</head>
 <body>
 <script>
 (function(){
@@ -42,6 +45,17 @@ export class Preview {
   window.onerror = (msg, src, line, col) => {
     send('error', [msg + ' (line ' + line + ')']);
   };
+
+  // 给积木块用的辅助函数
+  window.__show = (x) => {
+    const el = document.createElement('div');
+    el.textContent = (x === null || x === undefined) ? String(x) : String(x);
+    document.body.appendChild(el);
+  };
+  window.__clearPage = () => {
+    document.body.innerHTML = '';
+  };
+
   try {
 ${userCode}
   } catch (e) {

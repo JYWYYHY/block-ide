@@ -4,6 +4,9 @@ import { registerStringBlocks } from './string';
 import { registerArrayBlocks } from './array';
 import { registerFunctionBlocks } from './function';
 import { registerMultilineField } from './field-multiline';
+import { registerIoBlocks } from './io';
+import { registerObjectBlocks } from './object';
+import { registerDatetimeBlocks } from './datetime';
 
 export function registerAllBlocks() {
   registerMultilineField();
@@ -12,4 +15,7 @@ export function registerAllBlocks() {
   registerStringBlocks();
   registerArrayBlocks();
   registerFunctionBlocks();
+  registerIoBlocks();
+  registerObjectBlocks();
+  registerDatetimeBlocks();
 }
