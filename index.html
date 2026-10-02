@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="data:," />
+  <title>Block IDE</title>
+</head>
+<body>
+  <div id="app">
+    <header id="toolbar">
+      <span class="title">Block IDE</span>
+      <button id="btn-run">▶ 运行</button>
+      <button id="btn-clear">清空</button>
+    </header>
+
+    <main id="layout">
+      <section id="blockly-area">
+        <div id="var-panel">
+          <div class="panel-title">变量</div>
+          <div id="var-list"></div>
+          <button id="var-add">+ 新建变量</button>
+        </div>
+        <div id="blockly-host"></div>
+      </section>
+
+      <section id="right-pane">
+        <div id="tab-bar">
+          <button class="tab active" data-tab="preview">预览</button>
+          <button class="tab" data-tab="code">代码</button>
+        </div>
+
+        <div id="panel-content">
+          <div id="preview-wrap"></div>
+          <div id="code-wrap" hidden>
+            <pre id="code-view"></pre>
+          </div>
+        </div>
+
+        <div id="console-wrap">
+          <div class="pane-title">Console</div>
+          <div id="console"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
