@@ -91,7 +91,6 @@ export function registerArrayBlocks() {
       ],
       inputsInline: true,
       output: 'Boolean',
-      outputShape: HEX,
       colour: 260,
     },
     {

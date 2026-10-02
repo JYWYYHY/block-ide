@@ -248,8 +248,8 @@ export function registerCoreBlocks() {
     return [`${a} ${op} ${c}`, Order.LOGICAL_AND];
   };
   g.forBlock['js_not'] = (b, gen) => {
-    const v = gen.valueToCode(b, 'VAL', Order.UNARY_PREFIX) || 'false';
-    return [`!(${v})`, Order.UNARY_PREFIX];
+    const v = gen.valueToCode(b, 'VAL', (Order as any).UNARY_PREFIX) || 'false';
+    return [`!(${v})`, (Order as any).UNARY_PREFIX];
   };
 
   g.forBlock['js_if'] = (b, gen) => {
