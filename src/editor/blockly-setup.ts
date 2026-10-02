@@ -2,7 +2,6 @@ import * as Blockly from 'blockly/core';
 import * as ZhHans from 'blockly/msg/zh-hans';
 import 'blockly/blocks';
 import { registerAllBlocks } from '../blocks';
-import '../renderer/slim-zelos';
 
 export function createWorkspace(container: HTMLElement) {
   Blockly.setLocale(ZhHans as any);
