@@ -113,7 +113,7 @@ export function registerStringBlocks() {
     },
     {
       type: 'js_to_string',
-      message0: '把 %1 转成文字',
+      message0: '把 %1 转成文本',
       args0: [{ type: 'input_value', name: 'VAL' }],
       output: 'String',
       outputShape: 2,

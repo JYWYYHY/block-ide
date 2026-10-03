@@ -12,6 +12,8 @@
       <button id="btn-run">▶ 运行</button>
       <button id="btn-clear">清空</button>
       <span class="toolbar-sep"></span>
+      <button id="btn-open-folder">📁 打开文件夹</button>
+      <span class="toolbar-sep"></span>
       <button id="btn-export-js">导出 JS</button>
       <button id="btn-export-proj">导出工程</button>
       <button id="btn-import">导入</button>
@@ -24,6 +26,11 @@
           <div id="var-list"></div>
           <button id="var-add">+ 新建变量</button>
         </div>
+
+        <div id="file-panel" hidden>
+          <!-- 文件树会动态填充 -->
+        </div>
+
         <div id="blockly-host"></div>
       </section>
 

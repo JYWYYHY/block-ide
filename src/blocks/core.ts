@@ -207,6 +207,14 @@ export function registerCoreBlocks() {
       colour: 0,
       tooltip: '直接写 JS，支持多行',
     },
+    {
+      type: 'js_raw_value',
+      message0: '原生 JS 表达式 %1',
+      args0: [{ type: 'field_input', name: 'CODE', text: 'undefined' }],
+      output: null,
+      colour: 0,
+      tooltip: '一段无法还原的 JS 表达式，原样使用',
+    },
   ]);
 
   const g = javascriptGenerator;
@@ -287,6 +295,10 @@ export function registerCoreBlocks() {
   g.forBlock['js_raw'] = (b) => {
     const code = b.getFieldValue('CODE') || '';
     return code.endsWith('\n') ? code : code + '\n';
+  };
+  g.forBlock['js_raw_value'] = (b) => {
+    const code = b.getFieldValue('CODE') || 'undefined';
+    return [code, Order.ATOMIC];
   };
 }
 

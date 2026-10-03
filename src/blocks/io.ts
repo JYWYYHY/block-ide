@@ -5,11 +5,20 @@ export function registerIoBlocks() {
   Blockly.common.defineBlocksWithJsonArray([
     {
       type: 'js_prompt',
-      message0: '读取用户输入 %1',
-      args0: [{ type: 'field_input', name: 'MSG', text: '请输入' }],
-      output: 'String',
+      message0: '读取用户输入 %1 类型 %2',
+      args0: [
+        { type: 'field_input', name: 'MSG', text: '请输入' },
+        {
+          type: 'field_dropdown', name: 'TYPE',
+          options: [
+            ['文本', 'string'],
+            ['数字', 'number'],
+          ],
+        },
+      ],
+      output: null,
       colour: 20,
-      tooltip: '弹出输入框，让用户打字',
+      tooltip: '弹出输入框。选"数字"会自动把输入转成数字，可直接参与运算和比较。',
     },
     {
       type: 'js_alert',
@@ -50,6 +59,10 @@ export function registerIoBlocks() {
 
   g.forBlock['js_prompt'] = (b) => {
     const msg = JSON.stringify(b.getFieldValue('MSG') || '');
+    const type = b.getFieldValue('TYPE');
+    if (type === 'number') {
+      return [`Number(prompt(${msg}))`, Order.FUNCTION_CALL];
+    }
     return [`prompt(${msg})`, Order.FUNCTION_CALL];
   };
   g.forBlock['js_alert'] = (b, gen) => {

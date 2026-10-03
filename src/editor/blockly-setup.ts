@@ -80,7 +80,7 @@ export function createWorkspace(container: HTMLElement) {
           ],
         },
         {
-          kind: 'category', name: '文字', colour: '160',
+          kind: 'category', name: '文本', colour: '160',
           contents: [
             { kind: 'block', type: 'js_str_length' },
             { kind: 'block', type: 'js_str_includes' },

@@ -9,8 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@blockly/field-multilineinput": "^13.3.0",
-    "blockly": "^13.3.0"
+    "acorn": "^8.18.0",
+    "blockly": "^13.0.0",
+    "@blockly/field-multilineinput": "*"
   },
   "devDependencies": {
     "typescript": "^5.6.3",

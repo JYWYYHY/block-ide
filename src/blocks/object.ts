@@ -51,14 +51,14 @@ export function registerObjectBlocks() {
     },
     {
       type: 'js_json_stringify',
-      message0: '把 %1 转成 JSON 文字',
+      message0: '把 %1 转成 JSON 文本',
       args0: [{ type: 'input_value', name: 'VAL' }],
       output: 'String',
       colour: 200,
     },
     {
       type: 'js_json_parse',
-      message0: '把 JSON 文字 %1 解析成数据',
+      message0: '把 JSON 文本 %1 解析成数据',
       args0: [{ type: 'input_value', name: 'VAL' }],
       output: null,
       colour: 200,
